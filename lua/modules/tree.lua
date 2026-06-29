@@ -1,0 +1,45 @@
+vim.pack.add({
+  { src = 'https://github.com/nvim-tree/nvim-tree.lua' },
+})
+
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+local tree = require('nvim-tree')
+
+--@type nvim_tree.config
+local config = {
+  view = {
+    width = 30,
+  },
+  hijack_netrw = true,
+  sync_root_with_cwd = true,
+  update_focused_file = {
+    enable = true,
+    update_root = true,
+    ignore_list = {},
+  },
+  renderer = {
+    highlight_git = false,
+    highlight_opened_files = 'none',
+    highlight_modified = 'none',
+    highlight_bookmarks = 'none',
+    highlight_diagnostics = 'none',
+    highlight_clipboard = 'none',
+  },
+}
+
+tree.setup(config)
+
+local api = require('nvim-tree.api')
+
+vim.keymap.set('n', '<C-n>', api.tree.toggle, {
+  desc = 'Toggle NvimTree',
+})
+
+require('autocmd.vimenter').add(function()
+  api.tree.open()
+end)
+require('autocmd.colorscheme').add(function()
+  api.tree.reload()
+end)

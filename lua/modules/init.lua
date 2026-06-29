@@ -1,0 +1,5 @@
+require('modules.lsp')
+require('modules.telescope')
+require('modules.ui')
+require('modules.tree')
+require('modules.treesitter')
