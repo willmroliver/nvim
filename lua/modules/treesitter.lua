@@ -45,6 +45,8 @@ vim.api.nvim_create_autocmd('FileType', {
           'help',
           'mason_backdrop',
           'mason',
+          'blink-cmp-menu',
+          'blink-cmp-documentation',
         }, vim.bo[args.buf].filetype) then
       return
     end

@@ -9,8 +9,9 @@ require('autocmd.colorscheme').add(function()
   if not theme then return end
 
   vim.fn.writefile({ theme }, theme_file)
-  deps.lualine.init()
+
   deps.devicons.init()
+  deps.lualine.init()
 end)
 
 vim.api.nvim_create_autocmd('UIEnter', {
@@ -21,7 +22,7 @@ vim.api.nvim_create_autocmd('UIEnter', {
       pcall(vim.cmd.colorscheme, lines[1])
     end
 
-    deps.lualine.init()
     deps.devicons.init()
+    deps.lualine.init(lines[1])
   end,
 })

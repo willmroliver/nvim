@@ -9,10 +9,17 @@ local M = {
 }
 
 local lualine = require('lualine')
-M.lualine.init = function()
+M.lualine.init = function(th)
   lualine.setup({
     options = {
-      theme = 'auto',
+      theme = th or 'auto',
+      globalstatus = true,
+    },
+    extensions = {
+      {
+        filetypes = { 'NvimTree' },
+        sections = {},
+      },
     },
   })
 end
