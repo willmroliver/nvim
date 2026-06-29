@@ -1,4 +1,5 @@
 require('modules.lsp')
+require('modules.format')
 require('modules.telescope')
 require('modules.ui')
 require('modules.blink')

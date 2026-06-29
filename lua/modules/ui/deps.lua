@@ -31,12 +31,16 @@ M.devicons.init = function()
   devicons.set_up_highlights()
 end
 
-require('autocmd.vimenter').add(function()
-  devicons.set_up_highlights()
-end)
+vim.api.nvim_create_autocmd('VimEnter', {
+  callback = function()
+    devicons.set_up_highlights()
+  end,
+})
 
-require('autocmd.colorscheme').add(function()
-  devicons.set_up_highlights()
-end)
+vim.api.nvim_create_autocmd('ColorScheme', {
+  callback = function()
+    devicons.set_up_highlights()
+  end,
+})
 
 return M

@@ -4,15 +4,17 @@ local deps = require('modules.ui.deps')
 
 local theme_file = vim.fn.stdpath('config') .. '/theme.txt'
 
-require('autocmd.colorscheme').add(function()
-  local theme = vim.g.colors_name
-  if not theme then return end
+vim.api.nvim_create_autocmd('ColorScheme', {
+  callback = function()
+    local theme = vim.g.colors_name
+    if not theme then return end
 
-  vim.fn.writefile({ theme }, theme_file)
+    vim.fn.writefile({ theme }, theme_file)
 
-  deps.devicons.init()
-  deps.lualine.init()
-end)
+    deps.devicons.init()
+    deps.lualine.init()
+  end,
+})
 
 vim.api.nvim_create_autocmd('UIEnter', {
   once = true,

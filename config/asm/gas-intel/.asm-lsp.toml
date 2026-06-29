@@ -1,0 +1,17 @@
+# asm-lsp config: GNU assembler (GAS), x86 / x86-64, Intel syntax.
+#
+# asm-lsp has no Intel-vs-AT&T config switch -- syntax is detected from the
+# source. For Intel syntax, begin your .s files with:
+#
+#     .intel_syntax noprefix
+#
+# Drop into a project root, or merge into ~/.config/asm-lsp/.asm-lsp.toml.
+
+[default_config]
+assembler = "gas"
+instruction_set = "x86/x86-64"
+
+# Used to generate diagnostics by actually assembling the file. Swap for
+# "clang" if you prefer; on Apple Silicon you'll need an x86 toolchain.
+[default_config.opts]
+compiler = "gcc"

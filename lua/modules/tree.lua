@@ -37,9 +37,13 @@ vim.keymap.set('n', '<C-n>', api.tree.toggle, {
   desc = 'Toggle NvimTree',
 })
 
-require('autocmd.vimenter').add(function()
-  api.tree.open()
-end)
-require('autocmd.colorscheme').add(function()
-  api.tree.reload()
-end)
+vim.api.nvim_create_autocmd('VimEnter', {
+  callback = function()
+    api.tree.open()
+  end,
+})
+vim.api.nvim_create_autocmd('ColorScheme', {
+  callback = function()
+    api.tree.reload()
+  end,
+})

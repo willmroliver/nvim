@@ -19,7 +19,9 @@ require('nvim-treesitter').install({
   'javascript',
   'lua',
   'php',
+  'svelte',
   'typescript',
+  'vue',
 
   'json',
   'markdown',

@@ -8,6 +8,10 @@
       "rev": "5876dd95deeb70aadbe9f1c0b7117a135061cdac",
       "src": "https://github.com/saghen/blink.lib"
     },
+    "conform.nvim": {
+      "rev": "619363c30309d29ffa631e67c8183f2a72caa373",
+      "src": "https://github.com/stevearc/conform.nvim"
+    },
     "lualine.nvim": {
       "rev": "221ce6b2d999187044529f49da6554a92f740a96",
       "src": "https://github.com/nvim-lualine/lualine.nvim"
@@ -27,6 +31,10 @@
     "night-owl.nvim": {
       "rev": "86ed124c2f7e118670649701288e024444bf91e5",
       "src": "https://github.com/oxfist/night-owl.nvim"
+    },
+    "nvim-autopairs": {
+      "rev": "7b9923abad60b903ece7c52940e1321d39eccc79",
+      "src": "https://github.com/windwp/nvim-autopairs"
     },
     "nvim-lspconfig": {
       "rev": "3371bf298c1f56efc26771ee961f461176958fb5",

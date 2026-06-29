@@ -1,0 +1,10 @@
+# asm-lsp config: NASM, x86 / x86-64
+# Drop into a project root, or merge into ~/.config/asm-lsp/.asm-lsp.toml.
+
+[default_config]
+assembler = "nasm"
+instruction_set = "x86/x86-64"
+
+# Used to generate diagnostics by actually assembling the file.
+[default_config.opts]
+compiler = "nasm"

@@ -1,0 +1,6 @@
+# asm-lsp config: ARM64 GNU assembler (GAS / AT&T-style ARM syntax)
+# Drop into a project root, or merge into ~/.config/asm-lsp/.asm-lsp.toml.
+
+[default_config]
+assembler = "gas"
+instruction_set = "arm64"
