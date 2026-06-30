@@ -2,7 +2,7 @@ vim.pack.add({
   { src = 'https://github.com/nvim-treesitter/nvim-treesitter' },
 })
 
-require('nvim-treesitter').install({
+local types = {
   'asm',
   'bash',
   'c',
@@ -13,7 +13,6 @@ require('nvim-treesitter').install({
   'regex',
   'rust',
   'zig',
-
   'css',
   'html',
   'javascript',
@@ -22,37 +21,25 @@ require('nvim-treesitter').install({
   'svelte',
   'typescript',
   'vue',
-
   'json',
   'markdown',
   'xml',
   'yaml',
-
   'make',
   'cmake',
   'dockerfile',
   'terraform',
   'toml',
-}):wait(300000)
+}
+
+require('nvim-treesitter').install(types):wait(300000)
 
 vim.treesitter.language.register('php', 'html')
 
 vim.api.nvim_create_autocmd('FileType', {
   callback = function(args)
-    if vim.tbl_contains({
-          'NvimTree',
-          'NvimTreeFilter',
-          'TelescopePrompt',
-          'TelescopeResults',
-          'help',
-          'mason_backdrop',
-          'mason',
-          'blink-cmp-menu',
-          'blink-cmp-documentation',
-        }, vim.bo[args.buf].filetype) then
-      return
+    if vim.tbl_contains(types, vim.bo[args.buf].filetype) then
+      vim.treesitter.start()
     end
-
-    vim.treesitter.start()
   end
 })

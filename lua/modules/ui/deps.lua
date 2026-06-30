@@ -10,6 +10,10 @@ local M = {
 
 local lualine = require('lualine')
 M.lualine.init = function(th)
+  if th == 'default' then
+    th = 'auto'
+  end
+
   lualine.setup({
     options = {
       theme = th or 'auto',
