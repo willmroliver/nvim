@@ -44,4 +44,8 @@ vim.keymap.set('n', '<leader>fb', builtin.buffers, {
   desc = 'Telescope buffer view',
 })
 
+vim.keymap.set('n', '<leader>gd', builtin.lsp_definitions, {
+  desc = 'Telescope go to definitions',
+})
+
 require('modules.telescope.themepicker')

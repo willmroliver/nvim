@@ -14,6 +14,8 @@ cmp.setup({
         and vim.b.completion ~= false
   end,
   keymap = {
-    ['<CR>'] = { 'accept', 'fallback' },
+    preset = 'enter',
+    ['<Tab>'] = { 'snippet_forward', 'select_next', 'fallback' },
+    ['<S-Tab>'] = { 'snippet_backward', 'select_prev', 'fallback' },
   },
 })
