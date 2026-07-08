@@ -40,6 +40,14 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, {
   desc = 'Telescope live grep',
 })
 
+vim.keymap.set("n", "<leader>fG", function()
+  builtin.live_grep({
+    additional_args = function()
+      return { "--hidden", "--glob", "!**/.git/*" }
+    end,
+  })
+end)
+
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {
   desc = 'Telescope buffer view',
 })
