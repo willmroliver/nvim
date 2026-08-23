@@ -10,6 +10,12 @@ local spaces4    = {
   tabstop = 4,
   softtabstop = 4,
 }
+local spaces2    = {
+  expandtab = true,
+  shiftwidth = 2,
+  tabstop = 2,
+  softtabstop = 2,
+}
 
 local spaces2    = {
   expandtab = true,
@@ -28,14 +34,19 @@ local type_rules = {
 }
 
 for _, type in ipairs({
-  'json', 'jsonc',
   'html', 'php',
   'css', 'scss',
-  'javascript', 'javascriptreact',
-  'typescript', 'typescriptreact',
   'svelte', 'vue',
 }) do
   type_rules[type] = spaces4
+end
+
+for _, type in ipairs({
+  'json', 'jsonc',
+  'javascript', 'javascriptreact',
+  'typescript', 'typescriptreact',
+}) do
+  type_rules[type] = spaces2
 end
 
 local ext_rules = {
