@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "andromeda.nvim": {
+      "rev": "61aa284566ccef20f095f82931960b2d05a88e69",
+      "src": "https://github.com/idr4n/andromeda.nvim"
+    },
     "blink.cmp": {
       "rev": "bda905a4bf1b3edfa708b0be193b8c63d8620c96",
       "src": "https://github.com/saghen/blink.cmp"

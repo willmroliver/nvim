@@ -3,6 +3,7 @@ vim.pack.add({
   { src = 'https://github.com/shatur/neovim-ayu' },
   { src = 'https://github.com/rebelot/kanagawa.nvim' },
   { src = 'https://github.com/tiagovla/tokyodark.nvim' },
+  { src = 'https://github.com/idr4n/andromeda.nvim' },
 })
 
 -- weird issue with night-owl color scheme not setting colors_name
