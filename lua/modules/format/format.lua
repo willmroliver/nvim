@@ -44,6 +44,8 @@ require('conform').setup({
     jsonc           = prettier_if_local,
     yaml            = prettier_if_local,
     markdown        = prettier_if_local,
+
+    ocaml           = { 'ocamlformat' },
   },
 
   format_on_save = function(bufnr)

@@ -11,7 +11,21 @@ local spaces4    = {
   softtabstop = 4,
 }
 
-local type_rules = { asm = tabs8 }
+local spaces2    = {
+  expandtab = true,
+  shiftwidth = 2,
+  tabstop = 2,
+  softtabstop = 2,
+}
+
+local type_rules = {
+  asm = tabs8,
+
+  -- ocamlformat default
+  ocaml = spaces2,
+  ocamlinterface = spaces2,
+  dune = spaces2,
+}
 
 for _, type in ipairs({
   'json', 'jsonc',

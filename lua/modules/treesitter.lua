@@ -9,6 +9,8 @@ local types = {
   'cpp',
   'go',
   'nasm',
+  'ocaml',
+  'ocaml_interface',
   'python',
   'regex',
   'rust',
@@ -38,7 +40,9 @@ vim.treesitter.language.register('php', 'html')
 
 vim.api.nvim_create_autocmd('FileType', {
   callback = function(args)
-    if vim.tbl_contains(types, vim.bo[args.buf].filetype) then
+    -- filetype and parser names can differ (e.g. ocamlinterface -> ocaml_interface)
+    local lang = vim.treesitter.language.get_lang(vim.bo[args.buf].filetype)
+    if vim.tbl_contains(types, lang) then
       vim.treesitter.start()
     end
   end

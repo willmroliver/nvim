@@ -56,4 +56,8 @@ vim.keymap.set('n', '<leader>gd', builtin.lsp_definitions, {
   desc = 'Telescope go to definitions',
 })
 
+vim.keymap.set('n', '<leader>gr', builtin.lsp_references, {
+  desc = 'Telescope find references',
+})
+
 require('modules.telescope.themepicker')

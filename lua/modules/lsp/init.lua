@@ -16,6 +16,7 @@ require('mason-lspconfig').setup({
     'rust_analyzer',
     'gopls', -- go
     'zls',   -- zig
+    'ocamllsp',
 
     -- script
     'bashls',
