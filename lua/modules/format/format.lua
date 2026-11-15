@@ -21,6 +21,15 @@ local function prettier_if_local(bufnr)
   return local_prettier(bufnr) and { 'prettier' } or {}
 end
 
+-- mason-lspconfig only installs language servers, so fetch formatters here
+local registry = require('mason-registry')
+registry.refresh(function()
+  for _, name in ipairs({ 'fantomas' }) do
+    local pkg = registry.get_package(name)
+    if not pkg:is_installed() then pkg:install() end
+  end
+end)
+
 require('conform').setup({
   formatters = {
     prettier = {
@@ -46,6 +55,7 @@ require('conform').setup({
     markdown        = prettier_if_local,
 
     ocaml           = { 'ocamlformat' },
+    fsharp          = { 'fantomas' },
   },
 
   format_on_save = function(bufnr)

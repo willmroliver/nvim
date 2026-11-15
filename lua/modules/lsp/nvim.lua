@@ -42,3 +42,10 @@ vim.lsp.config('lua_ls', {
     Lua = {},
   },
 })
+
+-- legacy f# server that also claims the fsharp filetype. its cmd is just
+-- `dotnet`, so a bare `:lsp enable` would launch it and it crashes. matching
+-- no filetypes leaves fsautocomplete as the only f# server
+vim.lsp.config('fsharp_language_server', {
+  filetypes = {},
+})

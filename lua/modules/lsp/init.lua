@@ -18,6 +18,9 @@ require('mason-lspconfig').setup({
     'zls',   -- zig
     'ocamllsp',
 
+    -- dotnet
+    'fsautocomplete', -- f#
+
     -- script
     'bashls',
     'pyright', -- python types

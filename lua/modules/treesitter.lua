@@ -7,6 +7,7 @@ local types = {
   'bash',
   'c',
   'cpp',
+  'fsharp',
   'go',
   'nasm',
   'ocaml',

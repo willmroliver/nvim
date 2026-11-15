@@ -37,6 +37,7 @@ for _, type in ipairs({
   'html', 'php',
   'css', 'scss',
   'svelte', 'vue',
+  'fsharp', -- tabs are a compile error in f#
 }) do
   type_rules[type] = spaces4
 end
