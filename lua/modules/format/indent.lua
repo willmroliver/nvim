@@ -10,12 +10,6 @@ local spaces4    = {
   tabstop = 4,
   softtabstop = 4,
 }
-local spaces2    = {
-  expandtab = true,
-  shiftwidth = 2,
-  tabstop = 2,
-  softtabstop = 2,
-}
 
 local spaces2    = {
   expandtab = true,
