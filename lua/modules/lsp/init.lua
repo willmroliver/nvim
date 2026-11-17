@@ -18,7 +18,9 @@ local servers = {
   'zls',   -- zig
 
   -- dotnet
-  'fsautocomplete', -- f#
+  -- f#. mason's registry stopped at 0.83.0, whose decompiler can't read
+  -- .NET 10 assemblies (go to definition on BCL types fails). fixed in 0.85.3
+  'fsautocomplete@0.86.1',
 
   -- script
   'bashls',
@@ -61,3 +63,4 @@ require('mason-lspconfig').setup({
 })
 
 require('modules.lsp.nvim')
+require('modules.lsp.fsautocomplete')

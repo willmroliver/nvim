@@ -17,7 +17,10 @@ local config = {
   update_focused_file = {
     enable = true,
     update_root = true,
-    ignore_list = {},
+    -- files here don't move the root (and cwd). fsautocomplete decompiles
+    -- std lib types into the temp dir; rooting the tree there froze nvim
+    -- watching thousands of temp folders (go builds etc.)
+    ignore_list = { vim.uv.os_tmpdir() },
   },
   renderer = {
     highlight_git = false,
