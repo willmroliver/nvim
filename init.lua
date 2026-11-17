@@ -17,10 +17,6 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setqflist, {
   desc = 'Diagnostics to quickfix',
 })
 
--- buffer switching
-vim.keymap.set('n', '<Tab>', ':bnext<CR>')
-vim.keymap.set('n', '<S-Tab>', ':bprevious<CR>')
-
 -- pane switching
 vim.keymap.set('n', '<C-h>', '<C-w>h')
 vim.keymap.set('n', '<C-j>', '<C-w>j')

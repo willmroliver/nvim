@@ -1,3 +1,4 @@
+require('modules.buffers')
 require('modules.lsp')
 require('modules.format')
 require('modules.telescope')
